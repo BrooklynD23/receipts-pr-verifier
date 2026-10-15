@@ -2,7 +2,7 @@
 
 | Wave | Status | Last gate result |
 |---|---|---|
-| WAVE-00 bootstrap | todo | — |
+| WAVE-00 bootstrap | passed | gate ok 2026-10-14 @04995e2 (r2, playwright baseURL fix) |
 | WAVE-01 contracts | todo | — |
 | WAVE-02 fixtures-and-checker | todo | — |
 | WAVE-03 reviewer-and-loader | todo | — |
