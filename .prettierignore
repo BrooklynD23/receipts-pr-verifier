@@ -1,0 +1,9 @@
+docs/
+.claude/
+*.md
+fixtures/**/*.patch
+fixtures/eval/
+fixtures/prs/*/reviews*/
+.next/
+coverage/
+package-lock.json
