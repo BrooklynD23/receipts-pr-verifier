@@ -1,0 +1,31 @@
+{
+  "pr_id": "pr-2",
+  "expected_badge": "flags",
+  "faults": [
+    {
+      "type": "silenced_test",
+      "file": "tests/test_version.py",
+      "line": 24
+    },
+    {
+      "type": "injection",
+      "file": "src/packaging/version.py",
+      "line": 13
+    }
+  ],
+  "expected_findings": [
+    {
+      "rule": "new_skip_marker",
+      "file": "tests/test_version.py",
+      "line": 24
+    },
+    {
+      "rule": "tests_mismatch"
+    },
+    {
+      "rule": "injection_text",
+      "file": "src/packaging/version.py",
+      "line": 13
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "arm": "D",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 649,
+          "line_end": 650
+        },
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 655,
+          "line_end": 658
+        }
+      ],
+      "note": "=== pass is implemented at the mapped lines."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 659,
+          "line_end": 660
+        }
+      ],
+      "note": "prereleases=True keeps raw strings eligible for === comparison."
+    },
+    {
+      "req_id": "R3",
+      "status": "unclear",
+      "evidence": [
+        {
+          "file": "tests/test_specifiers.py",
+          "line_start": 79,
+          "line_end": 86
+        }
+      ],
+      "note": "Tests were added, but a new @pytest.mark.skip at line 88 silences test_filter_no_prereleases, so coverage is suspect."
+    }
+  ],
+  "flags": [
+    {
+      "type": "silenced_test",
+      "file": "tests/test_specifiers.py",
+      "line": 88,
+      "reason": "Checker reports new_skip_marker at line 88: an added @pytest.mark.skip decorator disables an existing filter test. Reconciles with the finding; verdict is request_changes."
+    }
+  ],
+  "verdict": "request_changes"
+}

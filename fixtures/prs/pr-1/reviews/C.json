@@ -1,0 +1,45 @@
+{
+  "arm": "C",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 649,
+          "line_end": 650
+        }
+      ],
+      "note": "Bundle maps R1 to added lines 649-658, which implement the === split."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 658,
+          "line_end": 660
+        }
+      ],
+      "note": "=== items bypass prerelease filtering via prereleases=True."
+    },
+    {
+      "req_id": "R3",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_specifiers.py",
+          "line_start": 79,
+          "line_end": 86
+        }
+      ],
+      "note": "Bundle test counts (140 ran of 140 collected, 0 skipped) match the diff."
+    }
+  ],
+  "flags": [],
+  "verdict": "approve"
+}

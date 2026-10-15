@@ -1,0 +1,45 @@
+{
+  "arm": "B",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/utils.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      ],
+      "note": "strip_trailing_zero is keyword-only and defaults to True."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/utils.py",
+          "line_start": 18,
+          "line_end": 21
+        }
+      ],
+      "note": "Guard strips release[-1] only when it is 0 and more than one segment remains."
+    },
+    {
+      "req_id": "R3",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_utils.py",
+          "line_start": 34,
+          "line_end": 39
+        }
+      ],
+      "note": "Both flag values asserted. Diff also touches src/packaging/tags.py, which looks unrelated to the issue, but no declared scope was provided to compare against."
+    }
+  ],
+  "flags": [],
+  "verdict": "approve"
+}

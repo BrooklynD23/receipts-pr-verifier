@@ -1,0 +1,50 @@
+{
+  "arm": "D",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 649,
+          "line_end": 650
+        },
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 655,
+          "line_end": 658
+        }
+      ],
+      "note": "Bundle diff_lines resolve to added lines; === runs as a separate pass."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 659,
+          "line_end": 660
+        }
+      ],
+      "note": "The === pass forces prereleases=True, so raw strings are never dropped."
+    },
+    {
+      "req_id": "R3",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_specifiers.py",
+          "line_start": 79,
+          "line_end": 86
+        }
+      ],
+      "note": "Tests cover matching, non-matching and prerelease-looking raw strings."
+    }
+  ],
+  "flags": [],
+  "verdict": "approve"
+}

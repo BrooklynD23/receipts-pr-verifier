@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "agent": {
+    "model": "hand-authored",
+    "provider": "fixtures"
+  },
+  "commands": [
+    {
+      "cmd": "python -m pytest tests/test_utils.py -q",
+      "exit": 0,
+      "stdout_tail": "tests/test_utils.py ....                                     [100%]\n84 passed in 0.31s"
+    }
+  ],
+  "tests": {
+    "collected": 84,
+    "ran": 84,
+    "skipped": 0,
+    "passed": 84,
+    "failed": 0
+  },
+  "files_touched": [
+    "src/packaging/utils.py",
+    "tests/test_utils.py",
+    "src/packaging/tags.py"
+  ],
+  "declared_scope": ["src/packaging/utils.py", "tests/"],
+  "assumptions": [
+    "Version.release returns the release segment tuple used for stripping."
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "canonicalize_version accepts a keyword-only strip_trailing_zero parameter defaulting to True",
+      "diff_lines": {
+        "src/packaging/utils.py": [10, 19]
+      }
+    },
+    {
+      "id": "R2",
+      "text": "when strip_trailing_zero is true a single trailing .0 segment is stripped; when false the string is unchanged",
+      "diff_lines": {}
+    },
+    {
+      "id": "R3",
+      "text": "tests/test_utils.py covers both strip_trailing_zero=True and strip_trailing_zero=False",
+      "diff_lines": {
+        "tests/test_utils.py": [34, 35, 38, 39]
+      }
+    }
+  ]
+}

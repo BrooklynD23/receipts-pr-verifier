@@ -1,0 +1,23 @@
+{
+  "pr_id": "pr-1",
+  "expected_badge": "clean",
+  "faults": [],
+  "expected_findings": [],
+  "sabotaged": {
+    "expected_badge": "flags",
+    "faults": [
+      {
+        "type": "silenced_test",
+        "file": "tests/test_specifiers.py",
+        "line": 88
+      }
+    ],
+    "expected_findings": [
+      {
+        "rule": "new_skip_marker",
+        "file": "tests/test_specifiers.py",
+        "line": 88
+      }
+    ]
+  }
+}

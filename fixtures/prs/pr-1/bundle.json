@@ -1,0 +1,55 @@
+{
+  "schema_version": "0.1",
+  "agent": {
+    "model": "demo-coder-1.0",
+    "provider": "fixture"
+  },
+  "commands": [
+    {
+      "cmd": "python -m pytest tests/test_specifiers.py -q",
+      "exit": 0,
+      "stdout_tail": "..............................\n140 passed in 2.31s"
+    },
+    {
+      "cmd": "python -m pytest tests/ -q",
+      "exit": 0,
+      "stdout_tail": "....................................\n812 passed in 9.04s"
+    }
+  ],
+  "tests": {
+    "collected": 140,
+    "ran": 140,
+    "skipped": 0,
+    "passed": 140,
+    "failed": 0
+  },
+  "files_touched": ["src/packaging/specifiers.py", "tests/test_specifiers.py"],
+  "declared_scope": ["src/packaging/specifiers.py", "tests/"],
+  "assumptions": [
+    "\"===\" specifiers are applied as a separate filter pass after normal specifiers",
+    "filter() keeps yielding raw items unchanged; only the comparison is string-based"
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "SpecifierSet accepts \"===\" specifiers and filter() yields items whose raw string exactly equals the \"===\" operand.",
+      "diff_lines": {
+        "src/packaging/specifiers.py": [649, 650, 655, 658]
+      }
+    },
+    {
+      "id": "R2",
+      "text": "\"===\" matching never drops raw items because of prerelease handling; it compares strings, not parsed versions.",
+      "diff_lines": {
+        "src/packaging/specifiers.py": [658, 659, 660]
+      }
+    },
+    {
+      "id": "R3",
+      "text": "Tests cover \"===\" in filter() for matching items, non-matching items, and prerelease-looking raw strings.",
+      "diff_lines": {
+        "tests/test_specifiers.py": [79, 80, 81, 82, 84, 85, 86]
+      }
+    }
+  ]
+}

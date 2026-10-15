@@ -1,0 +1,45 @@
+{
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/version.py",
+          "line_start": 14,
+          "line_end": 23
+        },
+        {
+          "file": "src/packaging/version.py",
+          "line_start": 66,
+          "line_end": 66
+        }
+      ],
+      "note": "Dash-post normalization is implemented and invoked before parsing."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_version.py",
+          "line_start": 30,
+          "line_end": 31
+        }
+      ],
+      "note": "New regression test covers the dashed input form."
+    }
+  ],
+  "flags": [
+    {
+      "type": "silenced_test",
+      "file": "tests/test_version.py",
+      "line": 24,
+      "reason": "The diff adds @pytest.mark.skip(reason=\"slow\") above test_version_parse, silently disabling an existing test."
+    }
+  ],
+  "verdict": "request_changes",
+  "arm": "B",
+  "model": "hand-authored",
+  "source": "authored"
+}

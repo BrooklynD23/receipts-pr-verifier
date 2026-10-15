@@ -1,0 +1,52 @@
+{
+  "arm": "D",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/utils.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      ],
+      "note": "Keyword-only parameter with default True."
+    },
+    {
+      "req_id": "R2",
+      "status": "unmet",
+      "evidence": [],
+      "note": "Bundle maps R2 to no diff lines, so the stripping behavior has no evidence even though lines 18-21 appear to implement it."
+    },
+    {
+      "req_id": "R3",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_utils.py",
+          "line_start": 34,
+          "line_end": 39
+        }
+      ],
+      "note": "Tests cover both flag values."
+    }
+  ],
+  "flags": [
+    {
+      "type": "scope",
+      "file": "src/packaging/tags.py",
+      "line": 0,
+      "reason": "src/packaging/tags.py is in the diff but outside declared_scope; checker reports out_of_scope."
+    },
+    {
+      "type": "unmapped_requirement",
+      "file": "src/packaging/utils.py",
+      "line": 0,
+      "reason": "R2 has empty diff_lines in the bundle; checker reports unmapped_requirement."
+    }
+  ],
+  "verdict": "request_changes"
+}

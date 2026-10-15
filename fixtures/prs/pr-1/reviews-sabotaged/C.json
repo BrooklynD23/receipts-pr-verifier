@@ -1,0 +1,52 @@
+{
+  "arm": "C",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 649,
+          "line_end": 650
+        }
+      ],
+      "note": "Bundle maps R1 to added lines that implement the === split."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/specifiers.py",
+          "line_start": 658,
+          "line_end": 660
+        }
+      ],
+      "note": "=== items bypass prerelease filtering via prereleases=True."
+    },
+    {
+      "req_id": "R3",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_specifiers.py",
+          "line_start": 79,
+          "line_end": 86
+        }
+      ],
+      "note": "New tests exist, but the checker flags a new skip marker at line 88."
+    }
+  ],
+  "flags": [
+    {
+      "type": "silenced_test",
+      "file": "tests/test_specifiers.py",
+      "line": 88,
+      "reason": "Newly added @pytest.mark.skip at line 88 silences test_filter_no_prereleases, and no bundle assumption explains it."
+    }
+  ],
+  "verdict": "request_changes"
+}

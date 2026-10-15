@@ -1,0 +1,53 @@
+diff --git a/src/packaging/specifiers.py b/src/packaging/specifiers.py
+index 3f4a5b6c..9c8d7e2f 100644
+--- a/src/packaging/specifiers.py
++++ b/src/packaging/specifiers.py
+@@ -640,13 +640,22 @@ class SpecifierSet:
+         # Determine if we're forcing a prerelease or not, if we're not forcing
+         # one for this particular filter call, then we'll use whatever the
+         # SpecifierSet thinks for whether or not we should support prereleases
+         if prereleases is None:
+             prereleases = self.prereleases
+ 
++        # "===" arbitrary equality compares the raw item string and ignores
++        # prerelease handling, so those specifiers must not be dropped by the
++        # prerelease filtering below.
++        arbitrary = [s for s in self._specs if s.operator == "==="]
++        version_specs = [s for s in self._specs if s.operator != "==="]
++
+         # If we have any specifiers, then we want to wrap our iterable in the
+         # filter method for each one, this will act as a logical AND amongst
+         # each specifier.
+-        if self._specs:
+-            for spec in self._specs:
+-                iterable = spec.filter(iterable, prereleases=prereleases)
++        if version_specs or arbitrary:
++            for spec in version_specs:
++                iterable = spec.filter(iterable, prereleases=prereleases)
++            for spec in arbitrary:
++                # "===" is an exact string match; prereleases never apply.
++                iterable = spec.filter(iterable, prereleases=True)
+             return iter(iterable)
+diff --git a/tests/test_specifiers.py b/tests/test_specifiers.py
+index 1a2b3c4d..5e6f7a8b 100644
+--- a/tests/test_specifiers.py
++++ b/tests/test_specifiers.py
+@@ -75,10 +75,18 @@ class TestSpecifierSet:
+     def test_filter_with_prereleases(self):
+         spec = SpecifierSet(">=1.0", prereleases=True)
+         assert [str(v) for v in spec.filter(["1.1.dev1"])] == ["1.1.dev1"]
+ 
++    def test_filter_arbitrary_equality(self):
++        items = ["1.0", "release-1.0", Version("2.0")]
++        filtered = SpecifierSet("===release-1.0").filter(items)
++        assert list(filtered) == ["release-1.0"]
++
++    def test_filter_arbitrary_equality_prerelease(self):
++        items = ["1.0a1", Version("2.0")]
++        assert list(SpecifierSet("===1.0a1").filter(items)) == ["1.0a1"]
+ 
+     def test_filter_no_prereleases(self):
+         spec = SpecifierSet(">=1.0")
+         assert list(spec.filter(["1.1", "1.1.dev1"])) == [Version("1.1")]
+ 
+     def test_filter_prefers_stable(self):

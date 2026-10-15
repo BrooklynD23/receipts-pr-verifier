@@ -1,0 +1,38 @@
+{
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/version.py",
+          "line_start": 18,
+          "line_end": 23
+        },
+        {
+          "file": "src/packaging/version.py",
+          "line_start": 66,
+          "line_end": 66
+        }
+      ],
+      "note": "New _normalize_dash_post helper maps the dashed form to .postN and is called at the top of __init__."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_version.py",
+          "line_start": 30,
+          "line_end": 31
+        }
+      ],
+      "note": "test_version_dash_post asserts str(Version(\"1.0-1\")) == \"1.0.post1\"."
+    }
+  ],
+  "flags": [],
+  "verdict": "approve",
+  "arm": "A",
+  "model": "hand-authored",
+  "source": "authored"
+}

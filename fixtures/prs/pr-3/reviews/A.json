@@ -1,0 +1,45 @@
+{
+  "arm": "A",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/utils.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      ],
+      "note": "Signature gains keyword-only strip_trailing_zero=True."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/utils.py",
+          "line_start": 18,
+          "line_end": 21
+        }
+      ],
+      "note": "Trailing .0 segment is dropped before the version is rebuilt."
+    },
+    {
+      "req_id": "R3",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_utils.py",
+          "line_start": 34,
+          "line_end": 39
+        }
+      ],
+      "note": "New tests exercise both True and False."
+    }
+  ],
+  "flags": [],
+  "verdict": "approve"
+}

@@ -1,0 +1,52 @@
+{
+  "arm": "C",
+  "model": "hand-authored",
+  "source": "authored",
+  "rows": [
+    {
+      "req_id": "R1",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/utils.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      ],
+      "note": "Keyword-only parameter with default True, matching the bundle mapping."
+    },
+    {
+      "req_id": "R2",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "src/packaging/utils.py",
+          "line_start": 18,
+          "line_end": 21
+        }
+      ],
+      "note": "Behavior is visible in the diff even though the bundle leaves R2 unmapped."
+    },
+    {
+      "req_id": "R3",
+      "status": "met",
+      "evidence": [
+        {
+          "file": "tests/test_utils.py",
+          "line_start": 34,
+          "line_end": 39
+        }
+      ],
+      "note": "Tests cover both flag values."
+    }
+  ],
+  "flags": [
+    {
+      "type": "scope",
+      "file": "src/packaging/tags.py",
+      "line": 0,
+      "reason": "File appears in the diff but is outside the bundle's declared_scope (src/packaging/utils.py, tests/)."
+    }
+  ],
+  "verdict": "request_changes"
+}

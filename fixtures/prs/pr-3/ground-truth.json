@@ -1,0 +1,24 @@
+{
+  "pr_id": "pr-3",
+  "expected_badge": "missing_evidence",
+  "faults": [
+    {
+      "type": "unmapped_requirement",
+      "req_id": "R2"
+    },
+    {
+      "type": "scope_creep",
+      "file": "src/packaging/tags.py"
+    }
+  ],
+  "expected_findings": [
+    {
+      "rule": "unmapped_requirement",
+      "req_id": "R2"
+    },
+    {
+      "rule": "out_of_scope",
+      "file": "src/packaging/tags.py"
+    }
+  ]
+}
