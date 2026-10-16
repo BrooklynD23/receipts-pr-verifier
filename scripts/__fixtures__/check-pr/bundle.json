@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1",
+  "agent": { "model": "m", "provider": "p" },
+  "commands": [],
+  "tests": { "collected": 1, "ran": 1, "skipped": 0, "passed": 1, "failed": 0 },
+  "files_touched": ["src/a.py"],
+  "declared_scope": ["src/", "tests/"],
+  "assumptions": [],
+  "requirements": [
+    { "id": "R1", "text": "f returns 2", "diff_lines": { "src/a.py": [2] } }
+  ]
+}
