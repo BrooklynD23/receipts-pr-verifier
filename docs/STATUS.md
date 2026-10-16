@@ -7,7 +7,7 @@
 | WAVE-02 fixtures-and-checker | passed | gate ok 2026-10-14 @7d24fde |
 | WAVE-03 reviewer-and-loader | passed | gate ok 2026-10-14 @96a7640 |
 | WAVE-04 api-and-components | passed | gate ok 2026-10-15 @3464e78 (r2) |
-| WAVE-05 pages-and-eval | blocked-gate | lint 0 (0 errors, 3 pre-existing warnings: Badge.test.tsx:22, visuals/anatomy/build.mjs:32-33); typecheck 0; test:coverage 0 (27 files, 268 tests; lines 90.66%, branches 84.47%, funcs 89.14%, stmts 89.49%); build 0; e2e/smoke.spec.ts 0 (2 passed); format 0; record-reviews --dry-run 0, no key 2; eval.ts 0 matches fixtures/eval/results.json except generated_at. BLOCKED: T05.2 findings 1-4 (see Blockers) |
+| WAVE-05 pages-and-eval | passed | gate ok 2026-10-15 @0dc77a8 |
 | WAVE-06 github-action (optional) | todo | — |
 | WAVE-07 corpus-pipeline (optional) | todo | — |
 | WAVE-08 e2e-deploy-release | todo | — |
