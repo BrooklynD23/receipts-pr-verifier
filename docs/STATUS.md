@@ -10,7 +10,7 @@
 | WAVE-05 pages-and-eval | passed | gate ok 2026-10-15 @0dc77a8 |
 | WAVE-06 github-action (optional) | todo | — |
 | WAVE-07 corpus-pipeline (optional) | todo | — |
-| WAVE-08 e2e-deploy-release | todo | — |
+| WAVE-08 e2e-deploy-release | passed | gate ok 2026-10-15 @6485254 |
 
 | Human task | Status |
 |---|---|
