@@ -8,7 +8,7 @@
 | WAVE-03 reviewer-and-loader | passed | gate ok 2026-10-14 @96a7640 |
 | WAVE-04 api-and-components | passed | gate ok 2026-10-15 @3464e78 (r2) |
 | WAVE-05 pages-and-eval | passed | gate ok 2026-10-15 @0dc77a8 |
-| WAVE-06 github-action (optional) | todo | — |
+| WAVE-06 github-action (optional) | passed | gate ok 2026-10-15 @2318731 |
 | WAVE-07 corpus-pipeline (optional) | todo | — |
 | WAVE-08 e2e-deploy-release | passed | gate ok 2026-10-15 @6485254 |
 
