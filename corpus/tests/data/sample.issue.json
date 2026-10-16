@@ -1,0 +1,10 @@
+{
+  "id": "sample-1",
+  "title": "Sample issue",
+  "body": "Make utils import sys and add a test.",
+  "requirements": [
+    { "id": "R1", "text": "utils imports sys" },
+    { "id": "R2", "text": "test_b exists" }
+  ],
+  "declared_scope": ["src/packaging/utils.py", "tests/"]
+}

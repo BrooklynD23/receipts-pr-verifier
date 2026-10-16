@@ -1,0 +1,16 @@
+{
+  "id": "packaging-01",
+  "title": "Reject empty version string with clear error",
+  "body": "Version('') raises a generic InvalidVersion message. Make the message name the empty input. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Version('') raises InvalidVersion mentioning empty string"
+    },
+    {
+      "id": "R2",
+      "text": "Existing invalid-version messages unchanged"
+    }
+  ],
+  "declared_scope": ["src/packaging/version.py", "tests/test_version.py"]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "packaging-05",
+  "title": "Canonicalize names: collapse mixed separators",
+  "body": "canonicalize_name('a_-.b') should return 'a-b'. Verify and fix. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "canonicalize_name collapses runs of -_. to one dash"
+    },
+    {
+      "id": "R2",
+      "text": "Result is lowercase"
+    }
+  ],
+  "declared_scope": ["src/packaging/utils.py", "tests/test_utils.py"]
+}

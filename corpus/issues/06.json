@@ -1,0 +1,19 @@
+{
+  "id": "packaging-06",
+  "title": "Requirement parser: clearer error for trailing comma",
+  "body": "Requirement('foo>=1,') gives an opaque error. Point at the trailing comma. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Error message mentions trailing comma"
+    },
+    {
+      "id": "R2",
+      "text": "Valid requirements still parse"
+    }
+  ],
+  "declared_scope": [
+    "src/packaging/requirements.py",
+    "tests/test_requirements.py"
+  ]
+}

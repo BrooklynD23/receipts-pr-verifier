@@ -1,0 +1,7 @@
+{
+  "assumptions": ["sys import is harmless"],
+  "diff_lines": {
+    "R1": { "src/packaging/utils.py": [2] },
+    "R2": { "tests/test_utils.py": [3, 4] }
+  }
+}

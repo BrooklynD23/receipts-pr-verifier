@@ -1,0 +1,16 @@
+{
+  "id": "packaging-08",
+  "title": "parse_wheel_filename rejects invalid build tag",
+  "body": "A build tag not starting with a digit is accepted. Reject it with InvalidWheelFilename. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Build tag without leading digit raises InvalidWheelFilename"
+    },
+    {
+      "id": "R2",
+      "text": "Valid build tags still parse"
+    }
+  ],
+  "declared_scope": ["src/packaging/utils.py", "tests/test_utils.py"]
+}

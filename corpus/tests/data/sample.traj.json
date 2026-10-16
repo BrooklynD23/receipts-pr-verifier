@@ -1,0 +1,40 @@
+{
+  "info": {
+    "model_stats": { "instance_cost": 0.0, "api_calls": 3 },
+    "config": { "model": { "model_name": "sample-model" } },
+    "mini_version": "2.4.6",
+    "exit_status": "Submitted",
+    "submission": "diff --git a/src/packaging/utils.py b/src/packaging/utils.py"
+  },
+  "trajectory_format": "mini-swe-agent-1.1",
+  "messages": [
+    { "role": "system", "content": "You are a helpful assistant." },
+    { "role": "user", "content": "Fix the issue." },
+    {
+      "role": "assistant",
+      "content": "Run tests first.",
+      "extra": {
+        "actions": [{ "command": "python -m pytest tests/test_utils.py -q" }],
+        "timestamp": 1760000000.0
+      }
+    },
+    {
+      "role": "user",
+      "content": "<returncode>0</returncode>\n<output>\n..\n2 passed in 0.10s\n</output>",
+      "extra": { "returncode": 0 }
+    },
+    {
+      "role": "assistant",
+      "content": "Edit file.",
+      "extra": {
+        "actions": [{ "command": "sed -i 's/a/b/' src/packaging/utils.py" }],
+        "timestamp": 1760000010.0
+      }
+    },
+    {
+      "role": "user",
+      "content": "<returncode>1</returncode>\n<output>\nsed: error\n</output>",
+      "extra": { "returncode": 1 }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "packaging-02",
+  "title": "Normalize marker whitespace in str(Marker)",
+  "body": "str(Marker('python_version>=\"3.8\"')) keeps inconsistent spacing. Emit canonical spacing. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "str(Marker) uses single spaces around operators"
+    },
+    {
+      "id": "R2",
+      "text": "Round-trip Marker(str(m)) == m"
+    }
+  ],
+  "declared_scope": ["src/packaging/markers.py", "tests/test_markers.py"]
+}

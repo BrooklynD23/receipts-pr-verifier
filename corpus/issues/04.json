@@ -1,0 +1,16 @@
+{
+  "id": "packaging-04",
+  "title": "Add Tag.__repr__ test coverage and fix escaping",
+  "body": "repr of Tag with unusual platform strings is untested and may misformat. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "repr(Tag) is stable for platform with dashes"
+    },
+    {
+      "id": "R2",
+      "text": "A test covers repr"
+    }
+  ],
+  "declared_scope": ["src/packaging/tags.py", "tests/test_tags.py"]
+}

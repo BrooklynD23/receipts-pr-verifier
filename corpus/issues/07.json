@@ -1,0 +1,16 @@
+{
+  "id": "packaging-07",
+  "title": "Version.base_version drops local segment consistently",
+  "body": "base_version for versions with epoch and local segment is inconsistent in docs and code. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "base_version excludes local segment"
+    },
+    {
+      "id": "R2",
+      "text": "base_version keeps epoch"
+    }
+  ],
+  "declared_scope": ["src/packaging/version.py", "tests/test_version.py"]
+}

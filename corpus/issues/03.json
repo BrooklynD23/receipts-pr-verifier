@@ -1,0 +1,16 @@
+{
+  "id": "packaging-03",
+  "title": "SpecifierSet.contains accepts string versions with prereleases flag",
+  "body": "contains() with prereleases=True on string input ignores the flag in one branch. Fix it. Repo: pypa/packaging.",
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "contains('1.0rc1', prereleases=True) is True"
+    },
+    {
+      "id": "R2",
+      "text": "Default behaviour unchanged"
+    }
+  ],
+  "declared_scope": ["src/packaging/specifiers.py", "tests/test_specifiers.py"]
+}
