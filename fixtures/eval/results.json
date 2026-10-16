@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-10-15T17:32:36.537Z",
+  "dir": "fixtures/prs",
+  "cases": 4,
+  "sources": {
+    "authored": 16,
+    "recorded": 0,
+    "live": 0
+  },
+  "table": {
+    "silenced_test": {
+      "A": {
+        "detected": 0,
+        "total": 2
+      },
+      "B": {
+        "detected": 1,
+        "total": 2
+      },
+      "C": {
+        "detected": 2,
+        "total": 2
+      },
+      "D": {
+        "detected": 2,
+        "total": 2
+      }
+    },
+    "injection": {
+      "A": {
+        "detected": 0,
+        "total": 1
+      },
+      "B": {
+        "detected": 0,
+        "total": 1
+      },
+      "C": {
+        "detected": 0,
+        "total": 1
+      },
+      "D": {
+        "detected": 1,
+        "total": 1
+      }
+    },
+    "unmapped_requirement": {
+      "A": {
+        "detected": 0,
+        "total": 1
+      },
+      "B": {
+        "detected": 0,
+        "total": 1
+      },
+      "C": {
+        "detected": 0,
+        "total": 1
+      },
+      "D": {
+        "detected": 1,
+        "total": 1
+      }
+    },
+    "scope_creep": {
+      "A": {
+        "detected": 0,
+        "total": 1
+      },
+      "B": {
+        "detected": 0,
+        "total": 1
+      },
+      "C": {
+        "detected": 1,
+        "total": 1
+      },
+      "D": {
+        "detected": 1,
+        "total": 1
+      }
+    }
+  },
+  "falseFlagRate": {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0
+  }
+}

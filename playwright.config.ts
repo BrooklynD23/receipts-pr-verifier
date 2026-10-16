@@ -5,7 +5,7 @@ export default defineConfig({
   use: { baseURL: "http://localhost:3000" },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {
-    command: "npm run build && npm run start",
+    command: "npm run start",
     url: "http://localhost:3000",
     env: { REVIEWER_MODE: "replay" },
     timeout: 180_000,

@@ -77,11 +77,13 @@ export async function loadPr(dir: string): Promise<FixturePr> {
 
 // id is a PrId from the zod enum (API allowlist) — never raw user input —
 // so the only paths reached are fixtures/prs/<pr-1|pr-2|pr-3>.
-export function loadDemoPr(id: PrId): Promise<FixturePr> {
+export async function loadDemoPr(id: PrId): Promise<FixturePr> {
+  "use cache";
   return loadPr(join(process.cwd(), "fixtures/prs", id));
 }
 
-export function listDemoPrs(): Promise<FixturePr[]> {
+export async function listDemoPrs(): Promise<FixturePr[]> {
+  "use cache";
   return Promise.all(PR_IDS.map((id) => loadDemoPr(id)));
 }
 
