@@ -1,0 +1,44 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      # secrets context is not allowed in jobs.<job>.if, so gate via a step output.
+      - name: Check for Vercel token
+        id: vercel-token
+        run: |
+          if [ -z "${VERCEL_TOKEN}" ]; then
+            echo "::notice title=Vercel deploy skipped::VERCEL_TOKEN secret is not set. Add it in Settings > Secrets and variables > Actions to enable deploys."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.vercel-token.outputs.present == 'true'
+      - uses: actions/setup-node@v7
+        if: steps.vercel-token.outputs.present == 'true'
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+        if: steps.vercel-token.outputs.present == 'true'
+
+      # `vercel deploy --prod` builds on Vercel and auto-creates the project on
+      # first run. With no env vars the app runs in replay mode (no keys needed).
+      # To enable the live reviewer, set REVIEWER_MODE=live and ANTHROPIC_API_KEY
+      # in the Vercel dashboard (Production env) or pass --build-env KEY="$VALUE".
+      - name: Deploy to Vercel (production)
+        if: steps.vercel-token.outputs.present == 'true'
+        run: npx --yes vercel@65.0.0 deploy --prod --yes --token="$VERCEL_TOKEN"
